@@ -13,22 +13,19 @@ const Navbar = () => {
             <div className='pt-6 pb-6'>
                 <a href="#">LOGO</a>
             </div>
-            <section className="fixed inset-0 bg-slate-500 text-3xl flex flex-col justify-center origin-top hidden">
-                {/* <button className="absolute top-6 right-1 text-4xl px-6">
-                    <AiOutlineClose size={40}/>
-                </button> */}
+            <button onClick={handleNav} className='z-50 fixed right-10 pt-6 pb-6 md:max-xl:hidden lg:hidden xl:hidden 2xl:hidden'>
+                {!nav ? <AiOutlineMenu size={40} /> : <AiOutlineClose size={40} />}
+            </button>
+
+            <section id="mobile-menu" className={!nav ? 'fixed right-[-100%]' : 'fixed right-0 top-0 w-[60%] h-full bg-slate-600'}>
                 <nav className='flex flex-col py-8'>
-                    <ul className="flex flex-col items-center">
-                        <li className='pb-8'><a href="#">Home</a></li>
-                        <li className='pb-8'><a href="#">About</a></li>
-                        <li><a href="#">Contact</a></li>
+                    <ul className="flex flex-col items-center pt-28">
+                        <li className='pb-8 text-xl'><a href="#">Home</a></li>
+                        <li className='pb-8 text-xl'><a href="#">About</a></li>
+                        <li className='text-xl'><a href="#">Contact</a></li>
                     </ul>
                 </nav>
             </section>
-
-            <button onClick={handleNav} id='' className='pt-6 pb-6 md:max-xl:hidden'>
-                {!nav ? <AiOutlineClose size={40} /> : <AiOutlineMenu size={40} />}
-            </button>
             
             <nav className='hidden md:block'>
                 <ul className="flex">
