@@ -6,7 +6,14 @@ export default {
     "./src/components/js/main.js"
   ],
   theme: {
-    extend: {},
+    extend: {
+      colors: {
+        'navbarBlue': '#131728',
+      },
+      fontFamily: {
+        'roboto': ["Roboto"], 
+      }
+    },
   },
   plugins: [],
 }
